@@ -1,0 +1,15 @@
+
+
+public class BonusMain {
+
+	public static void main(String[] args) {
+		
+		
+		Bonus ejecucion = new Bonus(); //se crea la instancia de la clase Bonus
+		
+		ejecucion.ingreseDatos("ingrese un numero"); //se hace el llamado al metodo ingreseDatos
+		ejecucion.entrada(); //se  hace el llamado al metodo entrada
+
+	}
+
+}

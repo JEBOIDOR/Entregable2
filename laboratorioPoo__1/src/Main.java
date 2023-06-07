@@ -1,0 +1,15 @@
+
+public class Main {
+
+	public static void main(String [] args) {
+		
+		Procesos   procesos; //se declara el nombre de la clase que esta va a pasar a tener
+		
+		procesos = new Procesos(); //se crea la instancia de la clase bajo el nuevo alias de la clase Procesos
+		
+		procesos.ingresarDatos(); //se accede a un metodo de la clase procesos llamado ingresarDatos 
+		procesos.calcularArea(); //se accede a un metodo de la clase procesos llamado calcularArea
+		
+	}
+	
+}

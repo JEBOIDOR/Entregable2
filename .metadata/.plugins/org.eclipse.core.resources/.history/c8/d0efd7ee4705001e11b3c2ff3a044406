@@ -1,0 +1,72 @@
+package vista.objeto;
+
+public class Animal {
+
+	//ATRIBUTOS
+	private int codigo, edad;
+	private String nombre, especie;
+	
+	public Animal() {
+		
+		codigo = 000;
+		edad = 0000;
+		nombre = null;
+		especie = null;
+		
+	}
+	
+	public int getCodigo() {
+		
+		return codigo;
+		
+	}
+	
+	public int getEdad() {
+		
+		return edad;
+		
+	}
+	
+	public String getNombre() {
+		
+		return nombre;
+		
+	}
+	
+	
+	public String getEspecie() {
+		
+		return especie;
+		
+	}
+	
+	
+	public void setCodigo(int codigo) {
+		
+		this.codigo = codigo;
+		
+	}
+	
+	public void setEdad(int edad) {
+		
+		this.edad = edad;
+		
+	}
+	
+	public void setNombre(String nombre) {
+		
+		this.nombre = nombre;
+		
+	}
+	
+	public void setEspecie(String especie) {
+		
+		this.especie = especie;
+		
+	}
+	
+	
+	
+	
+	
+}

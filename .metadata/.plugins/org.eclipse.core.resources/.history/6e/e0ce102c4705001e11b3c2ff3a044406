@@ -1,0 +1,35 @@
+package laboratorioPoo_1;
+
+import javax.swing.JOptionPane;
+
+public class Procesos {
+
+	private double ladoA; //se declaran  variables de tipo double con modificador de acceso privado, es decir para esta clase meramente
+	private double ladoB;
+	
+	
+	public void ingresarDatos() { //se crea el metodo de ingresar datos
+		String cadena; // se declara una variable de tipo string con nombre cadena
+		
+		cadena = JOptionPane.showInputDialog("ingrese el lado A: "); //se inicializa la variable cadena y se le un valor de entrada por teclado
+		ladoA = Double.parseDouble(cadena); //se incializa la variable ladoA la cual tiene como valor el
+		//	contenido de cadena pero con una conversion de su contenido a dato de tipo double este proceso se repie con la proxima variable
+		
+		cadena = JOptionPane.showInputDialog("ingrese el lado B: ");
+		ladoB = Double.parseDouble(cadena);
+		
+		
+		
+	}	
+	
+	public void calcularArea() { //se crea el metodo calcularArea
+		
+		double resultado; //declaracion de la variable resultado
+		
+		resultado = ladoA * ladoB; //incializacion de la variable resultado, teniendo como valor la multiplicacion de ladoA y ladoB
+		
+		JOptionPane.showMessageDialog(null, "el area del rectangulo es: " + resultado); //se muestra un mensaje con el resultao
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+
+import vista.procesos;
+
+public class Principal {
+
+	public static void main(String [] args) {
+		
+		Procesos procesos = new Procesos();
+		
+		procesos.start();
+		
+	}               
+	
+}

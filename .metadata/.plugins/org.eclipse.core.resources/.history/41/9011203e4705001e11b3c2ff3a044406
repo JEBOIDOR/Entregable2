@@ -1,0 +1,35 @@
+
+import javax.swing.JOptionPane;
+
+public class Bonus {
+
+	int numero , neg = 0, par = 0; //se declaran y se incializan las variables contadoras
+
+	public void entrada() {//se crea el metodo entrada
+		
+		for (int i = 0; i < 5; i++) {//se crea un ciclo for que va a ejecutar un maximo de 5 iteraciones
+			
+			numero = ingreseDatos("digite 1 numero"); // se incializa la variable numero con un metodo de entrada pot teclado
+			
+			if(numero %2 == 0)//se crea una estructura condicional que da como resultado una sumatoria a la variable par
+				par++;
+			
+			if(numero < 0) 
+				neg++;
+			
+		}
+	
+		JOptionPane.showMessageDialog(null, "la cantidad de numeros pares es: " + par + " \nla cantidad de numeros negativos es: " + neg);//se emite un mensaje que muestra el valor total de los acumuladores
+		
+	}
+	
+	public static int ingreseDatos(String string) { //se crea el metodo ingrese datos 
+		
+		String cadena; //variable de tipo string con nombre cadena
+		int valor; //variable de tipo int con nombre valor
+		cadena = JOptionPane.showInputDialog(string); //se inicializa la variable cadena un valor de entrada por teclado el cual tiene como parametro un mensaje
+		valor = Integer.parseInt(cadena); //se inicializa la variable valor que convierte en int a cadena
+		return valor; //se retorna la variable valor
+	}
+	
+}

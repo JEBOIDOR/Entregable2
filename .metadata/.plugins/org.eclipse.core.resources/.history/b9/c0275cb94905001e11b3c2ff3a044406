@@ -1,0 +1,157 @@
+package procesos;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.swing.JOptionPane;
+import vista.objeto.Animal;
+
+public class Procesos {
+	
+	//INSTANCICION DE CLASE
+	Animal animal = new Animal();
+	
+	//ESTRUCTURAS
+	ArrayList <String> infoAnimal;
+	HashMap<Integer, ArrayList<String>> mapAnimal;
+	
+	//PROPIEDADES 
+	private int edad, codigo;
+	private String nombre, especie;
+	
+	
+	
+	/*CONSTRUCTOR DE CLASE*/
+	public Procesos() {
+	
+		mapAnimal = new HashMap<Integer, ArrayList<String>>(); 
+		
+	}
+	
+	//METODOS
+	public void construirAnimal() {
+		
+		infoAnimal = new ArrayList<>();
+		
+		animal.setNombre(nombre);
+		animal.setCodigo(codigo);
+		animal.setEdad(edad);
+		animal.setEspecie(especie);
+		
+		
+		infoAnimal.add(nombre);
+		infoAnimal.add(codigo + "");
+		infoAnimal.add(edad + "");
+		infoAnimal.add(especie);
+		
+		mapAnimal.put(codigo, infoAnimal);
+		
+	}
+		
+	//METODOS
+	public void start() {
+		
+		String menuAnimales = "BIENVENID@ \n"
+				+ "1 ingresar animal \n"
+				+ "2 ver registros \n"
+				+ "3 buscar animal \n"
+				+ "4 salir \n"
+				+ "ingrese una opcion";
+		
+		int opc = 0;
+		
+		do {
+		
+			validarMenu(opc);
+		
+			opc = Integer.parseInt(JOptionPane.showInputDialog(menuAnimales));
+		}while(opc != 4);
+		
+		
+	}
+	
+	
+	private void validarMenu(int opc) {
+		
+		switch(opc) {
+	
+		case 1:
+				
+			ingresarDatos();
+			construirAnimal();
+					
+			break;
+			
+		case 2:
+			
+			if(validarArray())
+			  mostrarInfo();
+				
+			break;
+			
+		case 3:
+			
+			buscarAnimal();
+				
+			break;
+		
+		}
+		
+	}
+	
+	
+	private void ingresarDatos() {
+		
+		nombre = JOptionPane.showInputDialog("ingrese el nombre del animal");
+		codigo = Integer.parseInt(JOptionPane.showInputDialog("ingrese el codigo de " + nombre));
+		edad = Integer.parseInt(JOptionPane.showInputDialog("ingrese la edad de " + nombre));
+		especie = JOptionPane.showInputDialog("a que especie pertenece " + nombre);
+		
+	}
+	
+	
+	private void mostrarInfo() {
+		
+		for (Integer clave : mapAnimal.keySet()) {
+			
+			System.out.println(clave + "-" + mapAnimal.get(clave));
+			
+		}
+		
+	}
+	
+
+	private boolean validarArray() {
+		
+		if(infoAnimal.isEmpty()) {
+			
+			return false;
+			
+		}else {
+			
+			return true;
+			
+		}
+		
+	}
+	
+	private void buscarAnimal() {
+		
+		 int codAnimal = Integer.parseInt(JOptionPane.showInputDialog("ingrese el codigo ldel animal que desea buscar"));
+		
+		if(mapAnimal.containsKey(codAnimal)) {
+			
+			System.out.println("el animal se encuentra registrado");
+			
+		}
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+}
+
